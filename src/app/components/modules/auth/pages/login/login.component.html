@@ -1,0 +1,29 @@
+<!--DUDA: [formGroup]="formularioLogin"-->
+<div class="login">
+    Hola
+    <form [formGroup]="formularioLogin" (submit)="onSubmit()">
+
+        <div>
+            <input class="inputText" type="text" name="username" id="username" formControlName="username" placeholder="Usuario" autofocus="1">
+            <br>
+            <label class="error" *ngIf="formularioLogin.get('username')?.errors && formularioLogin.get('username')?.touched && formularioLogin.get('username')?.dirty"> Tamaño no definido </label>
+
+        </div>
+
+        <br>
+
+        <div>
+            <input class="inputText" type="text" name="password" id="password" formControlName="password" placeholder="Contraseña" autofocus="1">
+            <br>
+            <label class="error" *ngIf="formularioLogin.get('password')?.errors && formularioLogin.get('password')?.touched && formularioLogin.get('password')?.dirty">Contraseña requerido </label>
+
+        </div>
+
+        <br>
+        <div>
+            <button [disabled]="formularioLogin.invalid && formularioLogin.dirty" role="submit" type="submit">Ingresar</button>
+        </div>
+
+    </form>
+
+</div>

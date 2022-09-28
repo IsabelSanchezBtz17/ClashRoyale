@@ -1,0 +1,65 @@
+<!-- <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Name:</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">id:</li>
+      <li class="list-group-item">maxLevel: </li>
+    </ul>
+  </div>
+</div>-->
+
+
+<div>
+    <!--<img src="assets/inicio.png">-->
+</div>
+<div class="login">
+    <form [formGroup]="formularioLogin" (submit)="onSubmit()">
+        <div>
+            <input class="inputText" type="text" name="username" id="username" formControlName="username" placeholder="Usuario" autofocus="1">
+            <br>
+            <label class="error" *ngIf="formularioLogin.get('username')?.errors && formularioLogin.get('username')?.touched && formularioLogin.get('username')?.dirty"> Tamaño no definido </label>
+
+        </div>
+        <br>
+        <div>
+            <input class="inputText" type="text" name="password" id="password" formControlName="password" placeholder="Contraseña" autofocus="1">
+            <br>
+            <label class="error" *ngIf="formularioLogin.get('password')?.errors && formularioLogin.get('password')?.touched && formularioLogin.get('password')?.dirty">Contraseña requerido </label>
+
+        </div>
+        <br>
+        <div>
+            <button [disabled]="formularioLogin.invalid && formularioLogin.dirty" role="submit" type="submit">Ingresar</button>
+            <p>Datos: {{response}}</p>
+        </div>
+    </form>
+</div>
+
+
+<ul>
+    <li>
+        <a routerLink="/clashroyale/card">
+          Card
+      </a>
+    </li>
+
+    <li>
+        <a routerLink="/clashroyale/clan">
+          Clan
+      </a>
+
+    </li>
+
+    <li>
+        <a routerLink="/clashroyale/tournament">
+          Tournament
+      </a>
+    </li>
+
+
+</ul>
+
+
+Router:
+<router-outlet></router-outlet>
